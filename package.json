@@ -1,0 +1,19 @@
+{
+  "name": "vork-zombie-horde",
+  "private": true,
+  "type": "module",
+  "description": "Scene generators for a million-zombie horde rendered with vork",
+  "scripts": {
+    "props": "node horde/props.mjs",
+    "horde": "node horde/gen-horde.mjs",
+    "nuke": "node horde/gen-nuke.mjs",
+    "jump": "node quarry-jump/assets.mjs && node quarry-jump/scene.mjs"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "meshoptimizer": "^1.3.0",
+    "sharp": "^0.35.5"
+  }
+}

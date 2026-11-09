@@ -1,0 +1,554 @@
+{
+  "kinds": [
+    {
+      "kind": "zombie",
+      "model": "oga-cityzombie/x/InfectedCityMan.fbx",
+      "renameBones": ["CityDeadOutfit:"],
+      "retarget": true,
+      "animations": {
+        "walk": "oga-cityzombie/x/Zombie Walk.fbx",
+        "idle": "oga-cityzombie/x/Zombie Idle.fbx",
+        "react": "oga-cityzombie/x/Zombie Scream.fbx",
+        "hit": "oga-cityzombie/x/Zombie Reaction Hit.fbx",
+        "dying": "oga-cityzombie/x/Zombie Dying.fbx",
+        "idle2": "oga-cityzombie/x/Zombie Idle2.fbx"
+      },
+      "textures": {
+        "Outfit1": {
+          "color": "oga-cityzombie/x/InfectedCityMan_City_Man_Infected_Outfit1_BaseColor.png",
+          "normal": "oga-cityzombie/x/InfectedCityMan_City_Man_Infected_Outfit1_Normal.png",
+          "normalStrength": 0.6
+        },
+        "Body1": {
+          "color": "oga-cityzombie/x/InfectedCityMan_City_Infected_Man_Body1_BaseColor.png",
+          "normal": "oga-cityzombie/x/InfectedCityMan_City_Infected_Man_Body1_Normal.png",
+          "normalStrength": 0.6
+        }
+      },
+      "size": 1.78,
+      "cellMetres": 2.3,
+      "tumble": {
+        "axis": "pitch",
+        "impact": { "action": "hit", "t": 0.25 },
+        "pose": { "action": "dying", "t": 0.3 }
+      },
+      "poses": {
+        "walk": {
+          "action": "walk",
+          "frames": [1, 120]
+        },
+        "idle": {
+          "action": "idle2",
+          "t": 0.3
+        },
+        "react": {
+          "action": "react",
+          "t": 0.35
+        },
+        "launch": {
+          "action": "dying",
+          "t": 0.5,
+          "centre": "bbox"
+        },
+        "dead": {
+          "action": "dying",
+          "t": 1
+        }
+      },
+      "look": {
+        "ao": 0.45,
+        "materials": [
+          {
+            "match": "Body1",
+            "regions": [[0, 1, [0.56, 0.68, 0.44]]],
+            "detail": 0.45,
+            "detailAverage": 0.28,
+            "noise": [0.25, 14]
+          },
+          {
+            "match": "Outfit1",
+            "regions": [
+              [0, 0.53, [0.2, 0.36, 0.78]],
+              [0.53, 1, [0.62, 0.22, 0.85]]
+            ],
+            "detail": 0.45,
+            "detailAverage": 0.14,
+            "noise": [0.2, 7]
+          }
+        ]
+      },
+      "displayScale": 1.12
+    },
+    {
+      "kind": "zombieWoman",
+      "model": "oga-female/x/Female_Basic_Painted_Rigged.fbx",
+      "retarget": true,
+      "animations": {
+        "walk": "oga-cityzombie/x/Zombie Walk.fbx",
+        "idle": "oga-cityzombie/x/Zombie Idle.fbx",
+        "react": "oga-cityzombie/x/Zombie Scream.fbx",
+        "hit": "oga-cityzombie/x/Zombie Reaction Hit.fbx",
+        "dying": "oga-cityzombie/x/Zombie Dying.fbx",
+        "idle2": "oga-cityzombie/x/Zombie Idle2.fbx"
+      },
+      "textures": {
+        "": {
+          "color": "oga-female/x/Female_basic_Default_AlbedoTransparency.png",
+          "normal": "oga-female/x/Female_basic_Default_Normal.png",
+          "normalStrength": 0.6
+        }
+      },
+      "size": 1.66,
+      "cellMetres": 2.3,
+      "tumble": {
+        "axis": "pitch",
+        "impact": { "action": "hit", "t": 0.25 },
+        "pose": { "action": "dying", "t": 0.3 }
+      },
+      "poses": {
+        "walk": {
+          "action": "walk",
+          "frames": [1, 120]
+        },
+        "idle": {
+          "action": "idle2",
+          "t": 0.3
+        },
+        "react": {
+          "action": "react",
+          "t": 0.35
+        },
+        "launch": {
+          "action": "dying",
+          "t": 0.5,
+          "centre": "bbox"
+        },
+        "dead": {
+          "action": "dying",
+          "t": 1
+        }
+      },
+      "look": {
+        "ao": 0.45,
+        "materials": [
+          {
+            "match": "*",
+            "recolor": [
+              {
+                "sat": [0, 0.26],
+                "val": [0.28, 1.0],
+                "to": [0.08, 0.72, 0.62],
+                "valAverage": 0.4
+              },
+              {
+                "hue": [0.53, 0.7],
+                "sat": [0.34, 1.0],
+                "val": [0.1, 1.0],
+                "to": [0.22, 0.36, 0.85],
+                "valAverage": 0.4
+              }
+            ]
+          },
+          {
+            "match": "*",
+            "hueReplace": [0.0, 0.04, 0.45, 0.16, 0.24, 0.1]
+          },
+          {
+            "match": "*",
+            "hueReplace": [0.045, 0.035, 0.12, 0.52, 0.64, 0.4]
+          },
+          {
+            "match": "*",
+            "noise": [0.18, 9]
+          }
+        ]
+      },
+      "displayScale": 1.12
+    },
+    {
+      "kind": "zombieFat",
+      "base": "zombie",
+      "size": 1.74,
+      "fatten": {
+        "centre": 0.56,
+        "radius": 0.2,
+        "wide": 0.45,
+        "belly": 0.9,
+        "back": 0.2
+      },
+      "look": {
+        "ao": 0.45,
+        "materials": [
+          {
+            "match": "Body1",
+            "regions": [[0, 1, [0.56, 0.68, 0.44]]],
+            "detail": 0.45,
+            "detailAverage": 0.28,
+            "noise": [0.25, 14]
+          },
+          {
+            "match": "Outfit1",
+            "regions": [
+              [0, 0.53, [0.55, 0.38, 0.2]],
+              [0.53, 1, [0.3, 0.72, 0.95]]
+            ],
+            "detail": 0.45,
+            "detailAverage": 0.14,
+            "noise": [0.2, 7]
+          }
+        ]
+      },
+      "displayScale": 1.12
+    },
+    {
+      "kind": "zombieCop",
+      "base": "zombie",
+      "pieces": [
+        {
+          "name": "cap",
+          "shape": "cylinder",
+          "bone": "mixamorig:Head",
+          "offset": [0, 0.005, 0.17],
+          "size": [0.105, 0.115, 0.07],
+          "color": [0.1, 0.12, 0.2]
+        },
+        {
+          "name": "capTop",
+          "shape": "cylinder",
+          "bone": "mixamorig:Head",
+          "offset": [0, 0.0, 0.21],
+          "size": [0.12, 0.13, 0.025],
+          "color": [0.1, 0.12, 0.2]
+        },
+        {
+          "name": "visor",
+          "shape": "box",
+          "bone": "mixamorig:Head",
+          "offset": [0, -0.11, 0.145],
+          "size": [0.16, 0.08, 0.012],
+          "rotation": [-12, 0, 0],
+          "color": [0.05, 0.05, 0.06]
+        },
+        {
+          "name": "badge",
+          "shape": "box",
+          "bone": "mixamorig:Spine2",
+          "offset": [-0.09, -0.13, 0.1],
+          "size": [0.045, 0.012, 0.055],
+          "color": [0.92, 0.78, 0.3]
+        }
+      ],
+      "look": {
+        "ao": 0.45,
+        "materials": [
+          {
+            "match": "Body1",
+            "regions": [[0, 1, [0.56, 0.68, 0.44]]],
+            "detail": 0.45,
+            "detailAverage": 0.28,
+            "noise": [0.25, 14]
+          },
+          {
+            "match": "Outfit1",
+            "regions": [
+              [0, 0.53, [0.1, 0.14, 0.32]],
+              [0.53, 1, [0.16, 0.36, 0.9]]
+            ],
+            "detail": 0.45,
+            "detailAverage": 0.14,
+            "noise": [0.2, 7]
+          }
+        ]
+      },
+      "displayScale": 1.12
+    },
+    {
+      "kind": "zombieWorker",
+      "base": "zombie",
+      "pieces": [
+        {
+          "name": "hardhat",
+          "shape": "dome",
+          "bone": "mixamorig:Head",
+          "offset": [0, 0.0, 0.125],
+          "size": [0.125, 0.14, 0.115],
+          "color": [0.95, 0.8, 0.12]
+        },
+        {
+          "name": "hatBrim",
+          "shape": "cylinder",
+          "bone": "mixamorig:Head",
+          "offset": [0, -0.01, 0.13],
+          "size": [0.15, 0.17, 0.012],
+          "color": [0.95, 0.8, 0.12]
+        }
+      ],
+      "look": {
+        "ao": 0.45,
+        "materials": [
+          {
+            "match": "Body1",
+            "regions": [[0, 1, [0.56, 0.68, 0.44]]],
+            "detail": 0.45,
+            "detailAverage": 0.28,
+            "noise": [0.25, 14]
+          },
+          {
+            "match": "Outfit1",
+            "regions": [
+              [0, 0.53, [0.2, 0.32, 0.7]],
+              [0.53, 1, [1.0, 0.48, 0.05]],
+              [0.7, 0.735, [0.85, 1.0, 0.25]],
+              [0.62, 0.65, [0.85, 1.0, 0.25]],
+              [0.2, 0.23, [0.85, 1.0, 0.25]]
+            ],
+            "detail": 0.45,
+            "detailAverage": 0.14,
+            "noise": [0.2, 7]
+          }
+        ]
+      },
+      "displayScale": 1.12
+    },
+    {
+      "kind": "sheep",
+      "model": "oga-farm/x/Farm Animals by @Quaternius/Blends/Sheep.blend",
+      "size": 1.25,
+      "sizeAxis": "y",
+      "cellMetres": 1.6,
+      "subdivide": 2,
+      "tumble": {
+        "axis": "roll",
+        "impact": { "action": "Death", "t": 0.1 },
+        "pose": { "action": "Death", "t": 0.1 }
+      },
+      "poses": {
+        "walk": {
+          "action": "Walk",
+          "frames": [0, 32],
+          "centre": "bbox"
+        },
+        "idle": {
+          "action": "Idle",
+          "t": 0,
+          "centre": "bbox"
+        },
+        "react": {
+          "action": "Jump",
+          "t": 0.3,
+          "centre": "bbox"
+        },
+        "launch": {
+          "action": "Death",
+          "t": 0.35,
+          "centre": "bbox"
+        },
+        "dead": {
+          "action": "Death",
+          "t": 1,
+          "centre": "bbox"
+        }
+      },
+      "look": {
+        "ao": 0.55,
+        "aoDistance": 0.2,
+        "materials": [
+          {
+            "match": "White",
+            "replace": [0.84, 0.82, 0.74],
+            "noise": [0.22, 10]
+          },
+          {
+            "match": "Black",
+            "replace": [0.16, 0.15, 0.14],
+            "noise": [0.2, 12]
+          }
+        ]
+      },
+      "displace": [
+        {
+          "material": "White",
+          "strength": 0.035,
+          "scale": 0.05
+        }
+      ],
+      "displayScale": 1.15
+    },
+    {
+      "kind": "cow",
+      "model": "oga-farm/x/Farm Animals by @Quaternius/Blends/Cow.blend",
+      "size": 2.3,
+      "sizeAxis": "y",
+      "cellMetres": 2.9,
+      "subdivide": 2,
+      "tumble": {
+        "axis": "roll",
+        "impact": { "action": "Death", "t": 0.1 },
+        "pose": { "action": "Death", "t": 0.1 }
+      },
+      "poses": {
+        "walk": {
+          "action": "Walk",
+          "frames": [0, 40],
+          "centre": "bbox"
+        },
+        "idle": {
+          "action": "Idle",
+          "t": 0,
+          "centre": "bbox"
+        },
+        "react": {
+          "action": "Jump",
+          "t": 0.3,
+          "centre": "bbox"
+        },
+        "launch": {
+          "action": "Death",
+          "t": 0.35,
+          "centre": "bbox"
+        },
+        "dead": {
+          "action": "Death",
+          "t": 1,
+          "centre": "bbox"
+        }
+      },
+      "look": {
+        "ao": 0.55,
+        "aoDistance": 0.2,
+        "materials": [
+          {
+            "match": "White",
+            "replace": [0.86, 0.84, 0.8],
+            "noise": [0.15, 6]
+          },
+          {
+            "match": "Black",
+            "replace": [0.13, 0.12, 0.11],
+            "noise": [0.15, 8]
+          },
+          {
+            "match": "Pink",
+            "replace": [0.85, 0.6, 0.58],
+            "noise": [0.15, 8]
+          }
+        ]
+      },
+      "displayScale": 1.0
+    },
+    {
+      "kind": "pig",
+      "model": "oga-farm/x/Farm Animals by @Quaternius/Blends/Pig.blend",
+      "size": 1.35,
+      "sizeAxis": "y",
+      "cellMetres": 1.7,
+      "subdivide": 2,
+      "tumble": {
+        "axis": "roll",
+        "impact": { "action": "Death", "t": 0.1 },
+        "pose": { "action": "Death", "t": 0.1 }
+      },
+      "poses": {
+        "walk": {
+          "action": "Walk",
+          "frames": [0, 32],
+          "centre": "bbox"
+        },
+        "idle": {
+          "action": "Idle",
+          "t": 0,
+          "centre": "bbox"
+        },
+        "react": {
+          "action": "Jump",
+          "t": 0.3,
+          "centre": "bbox"
+        },
+        "launch": {
+          "action": "Death",
+          "t": 0.35,
+          "centre": "bbox"
+        },
+        "dead": {
+          "action": "Death",
+          "t": 1,
+          "centre": "bbox"
+        }
+      },
+      "look": {
+        "ao": 0.55,
+        "aoDistance": 0.2,
+        "materials": [
+          {
+            "match": "*",
+            "noise": [0.18, 8]
+          }
+        ]
+      },
+      "displayScale": 1.15
+    },
+    {
+      "kind": "chicken",
+      "model": "oga-chicken/x/chickenV2.blend",
+      "hide": ["Cylinder"],
+      "size": 0.42,
+      "cellMetres": 0.75,
+      "cycleMetres": 0.35,
+      "tumble": {
+        "axis": "roll",
+        "impact": { "action": "Dying", "t": 0.05 },
+        "pose": { "action": "Dying", "t": 0.1 }
+      },
+      "poses": {
+        "walk": {
+          "action": "Walk",
+          "frames": [1, 54]
+        },
+        "idle": {
+          "action": "Idle1",
+          "t": 0
+        },
+        "react": {
+          "action": "Idle2",
+          "t": 0.5
+        },
+        "launch": {
+          "action": "Dying",
+          "t": 0.4,
+          "centre": "bbox"
+        },
+        "dead": {
+          "action": "Dying",
+          "t": 1
+        }
+      },
+      "look": {
+        "ao": 0.5,
+        "aoDistance": 0.05,
+        "materials": [
+          {
+            "match": "Chicken",
+            "uvRegions": [
+              [0.0, 0.0, 0.6, 1.0, [0.97, 0.96, 0.93]],
+              [0.6, 0.0, 1.0, 0.45, [0.97, 0.96, 0.93]]
+            ],
+            "detail": 0.35,
+            "detailAverage": 0.25
+          },
+          {
+            "match": "Comb",
+            "replace": [0.9, 0.08, 0.06]
+          }
+        ]
+      },
+      "textures": {
+        "Chicken": {
+          "color": "oga-chicken/x/textures/UV-Texture.png",
+          "normal": "oga-chicken/x/textures/ChickenNorm.png",
+          "normalStrength": 0.7
+        }
+      },
+      "displayScale": 1.5
+    }
+  ]
+}
